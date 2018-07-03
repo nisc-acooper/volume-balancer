@@ -90,7 +90,7 @@ public class CopyRunner extends CopyProgressTracker implements Runnable {
     if(currentMove==null) return;
     this.copiedTotalBytes += updatedSize;
     this.currentMove.currentCopiedBytes += updatedSize;
-    LOG.info("update copiedTotalBytes = "+ this.copiedTotalBytes);
+    LOG.debug("update copiedTotalBytes = "+ this.copiedTotalBytes);
     StringBuilder message = new StringBuilder(String.format("[%s]==>[%s]\t[%.2f%% of %s] ",this.currentMove.fromSubdirFile,this.currentMove.toSubdirFile,this.currentMove.currentCopiedBytes*100.0f/this.currentMove.fromSubdirSize, StringUtils.byteDesc(this.currentMove.fromSubdirSize)));
     if(this.currentMove.currentCopiedBytes!=this.currentMove.fromSubdirSize) {
       message.append(String.format("Copying %s to %s", srcFile.getAbsolutePath(), desFile.getAbsolutePath())).append(" [")

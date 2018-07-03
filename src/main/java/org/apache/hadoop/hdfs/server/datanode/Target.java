@@ -92,9 +92,11 @@ public class Target implements Comparable<Target>{
     final Subdir availableRootDir = this.volume.getRootDir();
 
     LinkedList<Subdir> bfsQueue = new LinkedList<Subdir>();
+    LOG.info("getShuffled:availableRootDir " + availableRootDir.toString());
     bfsQueue.offer(availableRootDir);
     while(!bfsQueue.isEmpty()){
       Subdir tmpDir = bfsQueue.poll();
+      LOG.info("bfsQueuepoll" + tmpDir.toString());
       if(tmpDir.hasAvailableSeat(VolumeBalancer.maxBlocksPerDir)){
         return tmpDir;
       }else{

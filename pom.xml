@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
     http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.hadoop.hdfs.datanode</groupId>
     <artifactId>volume-balancer</artifactId>
@@ -29,7 +29,7 @@
     </licenses>
 
     <properties>
-        <hadoop.version>0.20.2-cdh3u1</hadoop.version>
+        <hadoop.version>0.20.2-cdh3u6</hadoop.version>
         <commons.io.version>2.4</commons.io.version>
         <commons.lang.version>2.6</commons.lang.version>
         <log4j.version>1.2.17</log4j.version>
@@ -197,7 +197,7 @@
         </repository>
         <repository>
             <id>cloudera</id>
-            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+            <url>https://repository.cloudera.com/content/repositories/releases/</url>
         </repository>
     </repositories>
 

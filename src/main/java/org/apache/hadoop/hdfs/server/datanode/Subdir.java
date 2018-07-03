@@ -1,6 +1,5 @@
 package org.apache.hadoop.hdfs.server.datanode;
 
-import org.apache.commons.httpclient.util.ExceptionUtil;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.log4j.Logger;
 
@@ -103,6 +102,7 @@ public class Subdir implements Comparable<Subdir>{
 
   public boolean hasAvailableSeat(final int maxBlocksPerDir){
     if(this.child==null) return true;
+    LOG.info("hasAvailableSeat"+this.child.size());
     return this.child.size()<maxBlocksPerDir;
   }
 
@@ -138,7 +138,7 @@ public class Subdir implements Comparable<Subdir>{
 
   public List<Subdir> findShuffledSubdirsWithAvailableSeat(int maxBlocksPerDir) {
 
-    List<Subdir> subdirsList = parent.getChild();
+    List<Subdir> subdirsList = this.getChild();
     if (subdirsList == null) {
       return null;
     }

@@ -59,6 +59,7 @@ public class VolumeUnbalancerPolicy extends VolumeBalancerPolicy{
     //using ascending order
     for(final Iterator<Target> j = candidates.iterator(); j.hasNext();) {
       final Target target = j.next();
+      LOG.info("target="+target.toString());
       Subdir bestDir = null;
       Source bestSource = null;
       // choose suitable fromSubdir for target.
@@ -84,6 +85,7 @@ public class VolumeUnbalancerPolicy extends VolumeBalancerPolicy{
       if(bestDir!=null){
         //choose this bestDir for target, remove the bestSource.
         LOG.info("bestDir="+bestDir.toString());
+        LOG.info("bestSource="+bestSource.toString());
         sources.remove(bestSource);
         //TODO: check remove iteration
         j.remove();
